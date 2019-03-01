@@ -12,13 +12,16 @@ module.exports = {
     'ember'
   ],
   extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended'
+    'plugin:ember/recommended',
+    'codingitwrong',
+    'plugin:prettier/recommended',
   ],
   env: {
     browser: true
   },
   rules: {
+    "camelcase": "off", // for destructuring underscored values
+    "require-await": "off", // for consistency in rendering tests
   },
   overrides: [
     // node files
@@ -28,6 +31,7 @@ module.exports = {
         '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
+        'ember-cli-build.js',
         'blueprints/*/index.js',
         'config/**/*.js',
         'lib/*/index.js'
